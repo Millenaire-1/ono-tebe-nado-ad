@@ -1,31 +1,35 @@
 /* =========================================
-   Шаг 3. Общие стили и оверлей
+   Общие стили
    ========================================= */
+html {
+  scroll-behavior: smooth;
+}
+
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
-/* Общие стили для адреса (используется в шапке и подвале) */
 .address {
   font-style: normal;
   line-height: 1.4;
 }
+
 .address a {
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
 }
+
 /* =========================================
-   Шаг 4. Шапка (Header)
+   Шапка (Header)
    ========================================= */
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 92px 50px 96px;
+  padding: 92px 50px;
 }
 
 .header__menu {
@@ -35,22 +39,21 @@
 .header__links-list {
   display: flex;
   gap: 32px;
-  list-style: circle; /* Кружочки между ссылками */
+  list-style: circle;
 }
 
 .header__links-list-item {
-  margin-left: 5px; /* Отступ для маркера */
+  margin-left: 5px;
 }
 
 .header__links-list-item_no-bullet {
-  list-style: none; /* Убираем кружочек у первой ссылки */
+  list-style: none;
   margin-left: 0;
 }
 
 .header__link {
   text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
   font-size: 18px;
 }
 
@@ -70,18 +73,17 @@
 }
 
 /* =========================================
-   Шаг 5. Обложка (Cover)
+   Обложка (Cover)
    ========================================= */
 .cover {
   position: relative;
-  background-image: url('../images/cover.jpg'); /* Путь к фоновой картинке */
+  background-image: url('../images/cover.jpg');
   background-size: cover;
   background-position: center;
-  padding: 165px 50px 30px;
+  padding: 165px 50px 50px;
   color: #fff;
 }
 
-/* Поднимаем контент над оверлеем */
 .cover__title, .cover__description {
   position: relative;
   z-index: 2;
@@ -92,10 +94,10 @@
   flex-direction: column;
   font-size: 100px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.15;
   text-transform: uppercase;
-  letter-spacing: 30px; /* Межбуквенное расстояние */
-  margin-bottom: 130px;
+  letter-spacing: 30px;
+  margin-bottom: 135px;
 }
 
 .aligned-text {
@@ -104,12 +106,10 @@
 
 .aligned-text_center {
   text-align: center;
-  
 }
 
 .aligned-text_right {
   text-align: right;
-  
 }
 
 .cover__description {
@@ -122,6 +122,7 @@
   word-spacing: 18px;
   text-transform: uppercase;
   font-size: 22px;
+  line-height: 1.27;
 }
 
 .bet-button {
@@ -135,7 +136,7 @@
 }
 
 /* =========================================
-   Шаг 6. Лоты (Lots)
+   Лоты (Lots)
    ========================================= */
 .lots {
   padding: 180px 50px;
@@ -144,9 +145,7 @@
 .lots__heading {
   font-size: 40px;
   font-weight: 700;
-  margin-bottom: 27px;
-  padding-left: 40px;
-  text-decoration: underline;
+  margin: 0 0 27px 40px;
 }
 
 .lots__card-list {
@@ -158,7 +157,7 @@
 }
 
 .lots__card-list-item {
-  width: calc((100% - 50px) / 3); /* 3 карточки в ряд с учетом gap */
+  width: calc((100% - 50px) / 3); /* Идеальная ширина для 3 карточек с отступом 25px */
   min-height: 450px;
 }
 
@@ -172,25 +171,17 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
-  padding: 48px 40px;
+  padding: 50px 40px;
   background-size: cover;
   background-position: center;
   color: #fff;
 }
 
-/* Фоны для карточек (пути к вашим картинкам) */
-.card_type_film {
-  background-image: url('../images/card-lot-01.jpg');
-}
-
-.card_type_book {
-  background-image: url('../images/card-lot-02.jpg');
-}
-
-.card_type_picture {
-  background-image: url('../images/card-lot-03.jpg');
-}
+.card_type_film { background-image: url('../images/lot-1.jpg'); }
+.card_type_book { background-image: url('../images/lot-2.jpg'); }
+.card_type_picture { background-image: url('../images/lot-3.jpg'); }
 
 .card__title, .card__text {
   position: relative;
@@ -198,17 +189,18 @@
 }
 
 .card__title {
-  font-size: 20px;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   margin-bottom: 20px;
 }
 
 .card__text {
   font-size: 18px;
   line-height: 1.35;
-  
 }
 
 .lots__look-more-link {
@@ -219,13 +211,13 @@
 }
 
 /* =========================================
-   Шаг 7. Об аукционе (About)
+   Об аукционе (About)
    ========================================= */
 .about {
   display: grid;
-  grid-template-columns: 334px 1fr; /* Левая колонка фиксирована (как карточки) */
+  grid-template-columns: 334px 1fr; /* Левая колонка как карточка */
   gap: 30px;
-  padding: 35px 50px 50px;
+  padding: 35px 50px 120px; /* Уменьшен нижний отступ, чтобы убрать пустоту */
 }
 
 .about__column_logo {
@@ -252,9 +244,8 @@
 .about__title {
   font-size: 40px;
   font-weight: 700;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 100px;
-  text-transform: uppercase;
 }
 
 .about__text {
@@ -268,7 +259,7 @@
 }
 
 /* =========================================
-   Шаг 8. Подвал (Footer)
+   Подвал (Footer)
    ========================================= */
 .footer {
   display: grid;
@@ -306,4 +297,4 @@
 .footer__social-icon {
   width: 48px;
   height: 48px;
-} 
+}
