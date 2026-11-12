@@ -77,7 +77,7 @@
   background-image: url('../images/cover.jpg'); /* Путь к фоновой картинке */
   background-size: cover;
   background-position: center;
-  padding: 165px 50px 50px;
+  padding: 165px 50px 30px;
   color: #fff;
 }
 
@@ -146,8 +146,6 @@
   font-weight: 700;
   margin-bottom: 27px;
   padding-left: 40px;
-  text-transform: uppercase;
-  letter-spacing: 30px;
   text-decoration: underline;
 }
 
@@ -227,7 +225,7 @@
   display: grid;
   grid-template-columns: 334px 1fr; /* Левая колонка фиксирована (как карточки) */
   gap: 30px;
-  padding: 35px 50px 180px;
+  padding: 35px 50px 50px;
 }
 
 .about__column_logo {
@@ -254,7 +252,7 @@
 .about__title {
   font-size: 40px;
   font-weight: 700;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
   text-transform: uppercase;
 }
